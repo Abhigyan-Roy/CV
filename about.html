@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+    <div class="main">
+        <div id="navi">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="hire.html">HIRE ME</a></li>
+            </ul>
+        </div>
+        <div id="container">
+            <div class="bigimg">
+                <img src="./pics/astro2.png" alt="" srcset="">
+                <div class="text-typing">
+                    <div id="text">
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <div class="containment">
+                    <div class="skill-box">
+                        <span class="title">C++</span>
+                        <div class="skill-bar">
+                            <span class="skill-per cplus">
+                                <span class="tooltip">70%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <span class="title">HTML</span>
+                        <div class="skill-bar">
+                            <span class="skill-per html">
+                                <span class="tooltip">80%</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="skill-box">
+                        <span class="title">CSS</span>
+
+                        <div class="skill-bar">
+                            <span class="skill-per css">
+                                <span class="tooltip">70%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <span class="title">JavaScript</span>
+
+                        <div class="skill-bar">
+                            <span class="skill-per javascript">
+                                <span class="tooltip">70%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <span class="title">NodeJS</span>
+
+                        <div class="skill-bar">
+                            <span class="skill-per nodejs">
+                                <span class="tooltip">60%</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="skill-box">
+                        <span class="title">React</span>
+
+                        <div class="skill-bar">
+                            <span class="skill-per react">
+                                <span class="tooltip">30%</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var i = 0, text;
+    text = "To be honest, I still don't have much skills to showcase :( ....... But still if you want I can show you some:"
+    var typingDiv = document.getElementById("text");
+    function typing() {
+        if (i < text.length) {
+            document.getElementById("text").innerHTML += text.charAt(i);
+            i++;
+            if (typingDiv.scrollHeight > typingDiv.offsetHeight) {
+                typingDiv.innerHTML = "";
+                typingDiv.scrollTop = 0;
+                typingDiv.style.lineHeight = 1;
+            }
+            setTimeout(typing, 90);
+        }else {
+            const textContainer = document.querySelector('.containment');
+            textContainer.classList.add('show');
+        }
+    }
+    typing();
+   
+</script>
+
+</html>

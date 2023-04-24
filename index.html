@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js Globe Example</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://kit.fontawesome.com/878d22e054.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div id="navi">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="hire.html">HIRE ME</a></li>
+            </ul>
+        </div>
+        <div id="inside">
+            <div id="name">
+                <div id="intro">
+                    <div class="ufo-container">
+                        <img src="./pics/ufo.png" class="ufo" alt="" width="500" height="200">
+                        <img src="./pics/light.png" alt="" class="lamp" width="500" height="200">
+                    </div>
+                    <div class="text-container">
+                        <h3>Hello, It's Me Abhigyan Roy</h3>
+                        <div class="wrapper">
+                            <div class="static-txt">I'm a</div>
+                            <ul class="dynamic-txts">
+                                <li><span>CoDer</span></li>
+                                <li><span>GaMer</span></li>
+                                <li><span>DeveloPer</span></li>
+                                <li><span>FreeLancer</span></li>
+                            </ul>
+                        </div>
+                        <p>This is my official portfolio website to show all details and </p><p>work experiences in my journey as a full stack developer</p>
+                        <button class="btn btn1">Download CV</button>
+                        <div class="icons">
+                            <ul>
+                                <li><i class="fab fa-facebook-f"></i></li>
+                                <li><i class="fab fa-twitter"></i></li>
+                                <li><i class="fab fa-instagram"></i></li>
+                                <li><i class="fab fa-linkedin-in"></i></li>
+                                <li><i class="fab fa-youtube"></i></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="container">
+                <div id="threed"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cv3.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            var ufoContainer = document.querySelector('.ufo-container');
+            var ufo = document.querySelector('.ufo');
+            ufoContainer.style.animationPlayState = 'running';
+            ufo.style.animationPlayState = 'running'; /* Resume the animation */
+        });
+    </script>
+    <script>
+        const ufoContainer = document.querySelector('.ufo-container');
+        const textContainer = document.querySelector('.text-container');
+        const lamp = document.querySelector('.lamp');
+        ufoContainer.addEventListener('animationend', () => {
+            textContainer.classList.add('show');
+            lamp.classList.add('glow');
+        });
+    </script>
+</body>
+
+</html>

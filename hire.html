@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="hire.css">
+</head>
+
+<body>
+    <div id="navi">
+        <ul>
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#">HIRE ME</a></li>
+        </ul>
+    </div>
+    <div class="main">
+        <img src="./pics/moon.png" id="bgimg" alt="" width="1000" height="400">
+        <img src="./pics/astro3.png" id="astronaut" alt="" width="450" height="450">
+        <div id="planet-container"></div>
+        <div id="texts">
+            <section>
+                <h2><span>L</span>
+                    <span>E</span>
+                    <span>T</span>
+                    <span>'</span>
+                    <span>S</span>
+                    <span>&nbsp;&nbsp;&nbsp;</span>
+                    <span>W</span>
+                    <span>O</span>
+                    <span>R</span>
+                    <span>K</span>
+                    <span>&nbsp;&nbsp;&nbsp;</span>
+                    <span>T</span>
+                    <span>O</span>
+                    <span>G</span>
+                    <span>E</span>
+                    <span>T</span>
+                    <span>H</span>
+                    <span>E</span>
+                    <span>R</span>
+                </h2>
+            </section>
+            <div class="inp">
+                <label for="">Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text">
+            </div>
+            <div class="inp">
+                <label for="">Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text">
+            </div>
+            <div class="inp-msg">
+                <label for="">Message&nbsp;</label>
+                <input type="text">
+            </div>
+            <button class="btn btn1">Contact Me</button>
+        </div>
+    </div>
+    <script>
+        // Get all the h2 elements on the page
+        const h2Elements = document.querySelectorAll('h2');
+
+        // Loop through each h2 element and add the effect to its span elements
+        h2Elements.forEach(h2 => {
+            const spanElements = h2.querySelectorAll('span');
+            let delay = 0;
+            spanElements.forEach((span, i) => {
+                span.style.transitionDelay = `${delay}s`;
+                delay += 0.04;
+            });
+
+            setInterval(() => {
+                spanElements.forEach(span => {
+                    span.style.filter = 'blur(15px)';
+                    span.style.opacity = '0';
+                    span.style.transform = 'scale(2)';
+                });
+
+                setTimeout(() => {
+                    spanElements.forEach(span => {
+                        span.style.filter = '';
+                        span.style.opacity = '';
+                        span.style.transform = '';
+                    });
+                }, 1500);
+            }, 6000);
+        });
+
+    </script>
+    <script>
+        // Create a scene
+        const scene = new THREE.Scene();
+
+        // Create a camera
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+        camera.position.set(0, 0, 5);
+
+        // Create a renderer
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById("planet-container").appendChild(renderer.domElement);
+
+        // Create a planet
+        const geometry = new THREE.SphereGeometry(2, 800, 800);
+        const texture = new THREE.TextureLoader().load("mars.jpg");
+        texture.magFilter = THREE.NearestFilter;
+        texture.minFilter = THREE.NearestFilter;
+        const material = new THREE.MeshPhongMaterial({ map: texture });
+        const planet = new THREE.Mesh(geometry, material);
+        scene.add(planet);
+        const light = new THREE.PointLight(0xffffff, 1);
+        light.position.set(0, 2, 5);
+        scene.add(light);
+
+        // Animate the planet and the ring
+        function animate() {
+            requestAnimationFrame(animate);
+            planet.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+
+    </script>
+</body>
+
+</html>
