@@ -13,7 +13,7 @@
 <body>
     <div id="navi">
         <ul>
-            <li><a href="home.html">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="#">HIRE ME</a></li>
         </ul>
@@ -110,7 +110,7 @@
         document.getElementById("planet-container").appendChild(renderer.domElement);
 
         // Create a planet
-        const geometry = new THREE.SphereGeometry(2, 800, 800);
+        const geometry = new THREE.SphereBufferGeometry(2, 60, 60);
         const texture = new THREE.TextureLoader().load("mars.jpg");
         texture.magFilter = THREE.NearestFilter;
         texture.minFilter = THREE.NearestFilter;
