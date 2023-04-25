@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:ital@1&display=swap');
 
+html {
+    font-size: 62.5%;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -21,7 +25,8 @@ body {
 #bgimg {
     width: 100%;
     position: absolute;
-    top: 50vh;
+    object-fit: cover;
+    top: 55vh;
     z-index: 2;
 }
 
@@ -58,7 +63,7 @@ section {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 5rem;
     color: #e66b3d;
     text-align: center;
     display: flex;
@@ -83,11 +88,12 @@ h2 span {
     display: inline-block;
     font-family: 'Cairo', sans-serif;
     list-style: none;
-    margin: 10px 50px;
+    margin: 1rem 5rem;
 }
 
 #navi ul li a {
     text-decoration: none;
+    font-size: 1.5rem;
     color: aliceblue;
     font-weight: bold;
 }
@@ -102,28 +108,32 @@ h2 span {
 }
 
 .inp input {
-    width: 300px;
-    height: 30px;
+    width: 30rem;
+    height: 3rem;
 }
 
 .inp {
-    margin-bottom: 40px;
+    margin-bottom: 4rem;
+}
+
+.inp label {
+    font-size: 1.5rem;
 }
 
 .inp-msg input {
-    height: 80px;
-    width: 300px;
-    margin-bottom: 40px;
+    height: 8rem;
+    width: 30rem;
+    margin-bottom: 0rem;
 }
 
 .btn {
     border: 1px solid #e66b3d;
     background: none;
-    padding: 10px 20px;
-    font-size: 20px;
+    padding: 1rem 2rem;
+    font-size: 2rem;
     font-family: "montserrat";
     cursor: pointer;
-    margin: 10px;
+    margin: 1rem;
     transition: 0.8s;
     position: relative;
     z-index: 7;
@@ -186,4 +196,115 @@ h2 span {
 .btn3:hover::before,
 .btn4:hover::before {
     height: 0%;
+}
+
+@media (max-width: 1154px) {
+    #planet-container {
+        left: 32%;
+    }
+
+    #bgimg {
+        width: 100%;
+        position: absolute;
+        object-fit: cover;
+        top: 50vh;
+    }
+
+    #astronaut {
+        transform: translateX(-10%);
+    }
+}
+
+@media (max-width: 1024px) {
+    #planet-container {
+        left: 20%;
+    }
+
+    html {
+        font-size: 55.5%;
+    }
+
+    #astronaut {
+        transform: translateX(-20%);
+    }
+}
+
+@media (max-width: 874px) {
+    #planet-container {
+        left: 10%;
+    }
+
+    html {
+        font-size: 50.5%;
+    }
+
+    #astronaut {
+        width: 50%;
+        height: 55%;
+        transform: translateX(-10%);
+    }
+}
+@media (max-width: 758px) {
+    #planet-container {
+        left: 5%;
+    }
+
+    html {
+        font-size: 45.5%;
+    }
+
+    #astronaut {
+        width: 45%;
+        height: 45%;
+        top: 40vh;
+        transform: translateX(-10%) translateY(10%);
+    }
+}
+@media (max-width: 672px) {
+    #planet-container {
+        left: -10%;
+    }
+
+    html {
+        font-size: 40.5%;
+    }
+
+    #astronaut {
+        width: 35%;
+        height: 35%;
+        top: 50vh;
+        transform: translateX(-10%) translateY(10%);
+    }
+}
+@media (max-width: 610px) {
+    #planet-container {
+        left: -150px;
+    }
+
+    html {
+        font-size: 34.5%;
+    }
+
+    #astronaut {
+        width: 55%;
+        height: 35%;
+        top: 50vh;
+        transform: translateX(-10%) translateY(10%);
+    }
+}
+@media (max-width: 360px) {
+    #planet-container {
+        left: -350px;
+    }
+
+    html {
+        font-size: 34.5%;
+    }
+
+    #astronaut {
+        width: 55%;
+        height: 35%;
+        top: 50vh;
+        transform: translateX(-10%) translateY(10%);
+    }
 }

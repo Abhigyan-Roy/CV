@@ -14,8 +14,8 @@ body {
 }
 
 .main {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-rows: 10% 90%;
     grid-template-areas:
@@ -64,6 +64,7 @@ body {
 }
 .bigimg img{
     width: 100%;
+    height: 100%;
 }
 .skills {
     grid-area: skills;
@@ -206,3 +207,5 @@ body {
     transform: translateX(-50%) rotate(45deg);
 
 }
+
+
