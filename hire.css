@@ -294,7 +294,7 @@ h2 span {
 }
 @media (max-width: 360px) {
     #planet-container {
-        left: -350px;
+        left: -300px;
     }
 
     html {
