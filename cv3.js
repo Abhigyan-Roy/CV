@@ -50,7 +50,6 @@ const moon = new THREE.Mesh(moonGeometry, moonMaterial);
 moon.position.set(7, 0, 0);
 earth.add(moon);
 
-// position the camera so we can see the earth
 camera.position.z = 12;
 camera.lookAt(earth.position);
 
