@@ -15,15 +15,6 @@ body {
     background-color: #000000;
 }
 
-canvas {
-    display: block;
-    position: fixed;
-    cursor: pointer;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-}
-
 .main {
     width: 100vw;
     height: 100vh;
@@ -48,12 +39,24 @@ canvas {
     grid-area: containment;
     width: 100%;
     display: flex;
-
 }
-
-#threed {
-    height: 100%;
-    width: 100%;
+#pic2{
+    z-index: 2;
+    position:relative;
+    top: 50%;
+    right: 10%;
+    animation: animate 4s linear infinite;
+}
+@keyframes animate
+{
+	0%,100%
+	{
+		transform: translateY(6px);
+	}
+	50%
+	{
+		transform: translateY(12px);
+	}
 }
 
 #name {
@@ -93,7 +96,6 @@ canvas {
     color: red;
 }
 
-
 #intro {
     width: 60%;
     height: auto;
@@ -104,7 +106,11 @@ canvas {
     font-size: 38px;
     font-family: 'Macondo', sans-serif;
 }
-
+#intro h2{
+    color: aliceblue;
+    font-size: 50px;
+    font-family: 'Lilita One', cursive;
+}
 #intro h3 {
     color: aliceblue;
     font-size: 18px;
@@ -117,67 +123,24 @@ canvas {
     font-family: 'Cairo', sans-serif;
 }
 
-.wrapper {
-    display: flex;
+span:before {
+	content: '';
+	animation: wordChange infinite 10s;
+	color: rgb(239, 108, 61);
 }
-
-.wrapper .static-txt {
-    color: #fff;
-    font-family: 'Bruno Ace', cursive;
-    font-size: 68px;
-    font-weight: 400;
-}
-
-.wrapper .dynamic-txts {
-    margin-left: 15px;
-    height: 70px;
-    font-family: 'Lilita One', cursive;
-    line-height: 70px;
-    overflow: hidden;
-}
-
-.dynamic-txts li {
-    list-style: none;
-    color: #FC6D6D;
-    font-size: 60px;
-    position: relative;
-    top: 0;
-    animation: slide 12s steps(4) infinite;
-}
-
-@keyframes slide {
-    100% {
-        top: -360px;
-    }
-}
-
-.dynamic-txts li span {
-    position: relative;
-    margin: 5px 0;
-    line-height: 90px;
-}
-
-.dynamic-txts li span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #000000;
-    border-left: 2px solid #FC6D6D;
-    animation: typing 3s steps(12) infinite;
-}
-
-@keyframes typing {
-
-    40%,
-    60% {
-        left: calc(100% + 30px);
-    }
-
-    100% {
-        left: 0;
-    }
+@keyframes wordChange {
+	0% {
+		content: 'Developer';
+	}
+	35% {
+		content: 'Freelancer';
+	}
+	70% {
+		content: 'Gamer';
+	}
+	100% {
+		content: 'Coder';
+	}
 }
 
 .ufo-container {
@@ -280,7 +243,9 @@ canvas {
     align-items: center;
     justify-content: center;
 }
-
+.icons ul li a{
+    color: #666;
+}
 .icons ul li {
     position: relative;
     display: flex;
@@ -335,7 +300,6 @@ canvas {
 .icons ul li:hover:before {
     filter: blur(3px);
     transform: scale(1.2);
-    /* box-shadow: 0 0 15px #d35400; */
 }
 
 .icons ul li:nth-child(1):hover:before {

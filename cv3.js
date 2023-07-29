@@ -12,7 +12,7 @@ const earthGeometry = new THREE.SphereGeometry(5.5, 42, 42);
 
 // load a texture for the earth
 const earthTextureLoader = new THREE.TextureLoader();
-const earthTexture = earthTextureLoader.load('https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg');
+const earthTexture = earthTextureLoader.load('texture3.jpg');
 earthTexture.magFilter = THREE.NearestFilter;
 earthTexture.minFilter = THREE.NearestFilter;
 
